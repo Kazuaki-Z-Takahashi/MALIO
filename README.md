@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  Molecular Assembly structure Learning package for Identifying Order parameters (MALIO).
+  Molecular Assembly structure Learning package for Identifying Order parameters (MALIO)
 </p>
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
