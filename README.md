@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  Molecular Assembly structure Learning package for Identifying Order parameters (MALIO)
+  Molecular Assembly Learning for Identifying Order parameters (MALIO)
 </p>
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
@@ -45,6 +45,8 @@ If you publish results (including data such as figures, tables, or text) obtaine
 
 Software dependencies (tested versions):
 
+* GNU Compiler Collection (11.5)
+* MPICH (4.1.1)
 * Python (3.6.13, 3.7.9)
 * nose (1.3.7)
 * numpy (1.16.4, 1.16.5)
