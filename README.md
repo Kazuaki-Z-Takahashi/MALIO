@@ -63,7 +63,6 @@ Operating systems tested:
 ## Build Process
 
 Run the following commands:
-```bash
 $ tar xvzf voro++-0.4.6.tar.gz
 $ cd voro++-0.4.6/
 $ make
