@@ -63,21 +63,21 @@ Operating systems tested:
 ## Build Process
 
 Run the following commands:
-$ tar xvzf voro++-0.4.6.tar.gz
-$ cd voro++-0.4.6/
-$ make
-$ cd ../malio_cpp/
-$ make
-$ cd ..
+* $ tar xvzf voro++-0.4.6.tar.gz
+* $ cd voro++-0.4.6/
+* $ make
+* $ cd ../malio_cpp/
+* $ make
+* $ cd ..
 
 ## Quick Start Guide
 
 Run the following commands:
 
-$ bindir="$(pwd)/malio_cpp"
-$ cd quick_start/
-$ mpiexec -n [number_of_CPU_cores] $bindir/ml_lmp.x -os op_settings.json -fn 2 -n 3
-$ python3 $bindir/ml_learn.py
+* $ bindir="$(pwd)/malio_cpp"
+* $ cd quick_start/
+* $ mpiexec -n [number_of_CPU_cores] $bindir/ml_lmp.x -os op_settings.json -fn 2 -n 3
+* $ python3 $bindir/ml_learn.py
 
 You can reduce the number of order parameters and shorten the computation time by editing op_settings.json.
 * The option -fn specifies the number of files per structural motif to be input into MALIO.
@@ -90,5 +90,4 @@ MALIO was developed with support from JST PRESTO (Grant No. JPMJPR22O6) and NEDO
 
 ## Contact
 
-Kazuaki Z. Takahashi
-Email: kazu.takahashi@aist.go.jp
+Kazuaki Z. Takahashi (kazu.takahashi@aist.go.jp)
