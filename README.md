@@ -90,5 +90,4 @@ MALIO was developed with support from JST PRESTO (Grant No. JPMJPR22O6) and NEDO
 
 ## Contact
 
-Kazuaki Z. Takahashi
-Email: kazu.takahashi@aist.go.jp
+Kazuaki Z. Takahashi (kazu.takahashi@aist.go.jp)
