@@ -1,9 +1,0 @@
-nose
-numpy
-pyquaternion
-sympy
-scipy
-matplotlib
-pandas
-scikit-learn
-cython
