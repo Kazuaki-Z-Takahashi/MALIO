@@ -14,9 +14,10 @@
 ## Table of Contents
 
 - [Features](#features)
-- [Citing MALIO](#citation)
+- [Citing MALIO](#citing-malio)
 - [System Requirements](#system-requirements)
 - [Build Process](#build-process)
+- [Quick Start Guide](#quick-start-guide)
 - [Acknowledgments](#acknowledgments)
 - [Contact](#contact)
 
@@ -24,51 +25,71 @@
 
 ## Features
 
+⚠️ **Note:** This project has migrated from **Cython** to **C++**!
+
 The main features of MALIO are described in detail in the following papers, for example:
 
-* Kazuaki Z. Takahashi, Molecular cluster analysis using local order parameters selected by machine learning, Physical Chemistry Chemical Physics 25, 658-672, 2023. (https://doi.org/10.1039/D2CP03696G) **First paper to publish MALIO.**
-* Kazuaki Z. Takahashi, Takeshi Aoyagi, and Jun-ichi Fukuda, Multistep nucleation of anisotropic molecules, Nature Communications 12, 5278, 2021. (https://doi.org/10.1038/s41467-021-25586-4) **First paper using the whole concept of MALIO.**
-* Kazuaki Z. Takahashi, and Masaki Hiratsuka, Local Order Parameters Classifying Water Networks of Ice and Cyclopropane Clathrate Hydrates, Crystal Growth & Design 23, 4815-4824, 2023. (https://doi.org/10.1021/acs.cgd.2c01519)
-* Kazuaki Z. Takahashi, Numerical evidence for the existence of three different stable liquid water structures as indicated by local order parameter, The Journal of Chemical Physics 161, 134507, 2024. (https://doi.org/10.1063/5.0205804)
+* Kazuaki Z. Takahashi, *Molecular cluster analysis using local order parameters selected by machine learning*, **Physical Chemistry Chemical Physics** 25, 658–672, 2023. (https://doi.org/10.1039/D2CP03696G) **First paper introducing MALIO.**
+* Kazuaki Z. Takahashi, Takeshi Aoyagi, and Jun-ichi Fukuda, *Multistep nucleation of anisotropic molecules*, **Nature Communications** 12, 5278, 2021. (https://doi.org/10.1038/s41467-021-25586-4) **First paper presenting the overall concept of MALIO.**
+* Kazuaki Z. Takahashi, *Numerical evidence for the existence of three different stable liquid water structures as indicated by local order parameter*, **The Journal of Chemical Physics** 161, 134507, 2024. (https://doi.org/10.1063/5.0205804)
+* Jun-ichi Fukuda and Kazuaki Z. Takahashi, *Direct simulation and machine learning structure identification unravel soft martensitic transformation and twinning dynamics*, **Proceedings of the National Academy of Sciences of the United States of America** 121, e2412476121, 2024. (https://doi.org/10.1073/pnas.2412476121) **First study applying MALIO to continuum simulations**
 
 ## Citing MALIO
 
-When you publish findings (data such as figures and tables, as well as texts) obtained with the help of MALIO, please cite the following two references:
+If you publish results (including data such as figures, tables, or text) obtained using MALIO, please cite the following two references:
 
-* Kazuaki Z. Takahashi, Molecular cluster analysis using local order parameters selected by machine learning, Physical Chemistry Chemical Physics 25, 658-672, 2023. (https://doi.org/10.1039/D2CP03696G) **First paper to publish MALIO.**
-* Kazuaki Z. Takahashi, Takeshi Aoyagi, and Jun-ichi Fukuda, Multistep nucleation of anisotropic molecules, Nature Communications 12, 5278, 2021. (https://doi.org/10.1038/s41467-021-25586-4) **First paper using the whole concept of MALIO.**
+* Kazuaki Z. Takahashi, *Molecular cluster analysis using local order parameters selected by machine learning*, **Physical Chemistry Chemical Physics** 25, 658–672, 2023. (https://doi.org/10.1039/D2CP03696G) **First paper introducing MALIO.**
+* Kazuaki Z. Takahashi, Takeshi Aoyagi, and Jun-ichi Fukuda, *Multistep nucleation of anisotropic molecules*, **Nature Communications** 12, 5278, 2021. (https://doi.org/10.1038/s41467-021-25586-4) **First paper presenting the overall concept of MALIO.**
 
 ## System Requirements
 
-Software dependencies (version numbers tested on):
+Software dependencies (tested versions):
 
-* Python (3.6.13)
+* Python (3.6.13, 3.7.9)
 * nose (1.3.7)
-* numpy (1.16.4)
+* numpy (1.16.4, 1.16.5)
 * pyquaternion (0.9.5)
 * sympy (1.4)
-* scipy (1.5.4)
-* matplotlib (3.1.0)
-* pandas (1.1.5)
+* scipy (1.5.4, 1.7.3)
+* matplotlib (3.1.0, 3.4.0)
+* pandas (1.1.5, 1.2.0)
 * scikit-learn (0.23.2)
-* cython (0.29.21)
 
-Operating systems:
+Operating systems tested:
 * CentOS Linux 7
 * Rocky Linux 8
 * Rocky Linux 9
 
 ## Build Process
 
-Execute the following commands:
-* $ cd malio_cy
-* $ ls Makefile setup.py
-* $ make
+Run the following commands:
+```bash
+$ tar xvzf voro++-0.4.6.tar.gz
+$ cd voro++-0.4.6/
+$ make
+$ cd ../malio_cpp/
+$ make
+$ cd ..
+
+## Quick Start Guide
+
+Run the following commands:
+
+$ bindir="$(pwd)/malio_cpp"
+$ cd quick_start/
+$ mpiexec -n [number_of_CPU_cores] $bindir/ml_lmp.x -os op_settings.json -fn 2 -n 3
+$ python3 $bindir/ml_learn.py
+
+You can reduce the number of order parameters and shorten the computation time by editing op_settings.json.
+* The option -fn specifies the number of files per structural motif to be input into MALIO.
+* The option -n specifies the number of structural motifs to distinguish.
+By following the Quick Start Guide, you can reproduce part of the results reported in [this paper](https://doi.org/10.1063/5.0205804), which is listed in the Features section.
 
 ## Acknowledgments
 
-MALIO was developed with the support of JST PRESTO (Grant No. JPMJPR22O6), and NEDO (JPNP18016).
+MALIO was developed with support from JST PRESTO (Grant No. JPMJPR22O6) and NEDO (JPNP18016).
 
 ## Contact
 
-Kazuaki Z. Takahashi (kazu.takahashi@aist.go.jp)
+Kazuaki Z. Takahashi
+Email: kazu.takahashi@aist.go.jp
