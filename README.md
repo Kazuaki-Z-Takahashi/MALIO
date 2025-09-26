@@ -82,6 +82,7 @@ Run the following commands:
 You can reduce the number of order parameters and shorten the computation time by editing op_settings.json.
 * The option -fn specifies the number of files per structural motif to be input into MALIO.
 * The option -n specifies the number of structural motifs to distinguish.
+
 By following the Quick Start Guide, you can reproduce part of the results reported in [this paper](https://doi.org/10.1063/5.0205804), which is listed in the Features section.
 
 ## Acknowledgments
